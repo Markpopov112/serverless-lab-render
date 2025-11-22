@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.11
 from flask import Flask, request, jsonify
 import psycopg2
 import os

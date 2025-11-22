@@ -1,12 +1,9 @@
 from flask import Flask, request, jsonify
-# Замените эту строку:
-# import psycopg2
-# На эту:
-from psycopg import connect
+import psycopg2
 import os
 from urllib.parse import urlparse
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 def get_db_connection():
     database_url = os.environ.get('DATABASE_URL')
@@ -22,7 +19,6 @@ def get_db_connection():
         return conn
     else:
         return None
-
 
 def init_db():
     conn = get_db_connection()
